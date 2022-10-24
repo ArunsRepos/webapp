@@ -23,9 +23,9 @@ pipeline {
             stage('Build') {
             steps {
                     
-                sh '''rm -rf versions
-                mkdir -p versions
-cp target/my-app.war versions/my-app-V$BUILD_ID.war'''
+                sh '''cd /home/ec2-user/jenkins/jenkins/workspace/Build
+                        mkdir -p versions
+                        cp target/my-app.war versions/my-app-V$BUILD_ID.war'''
             
             }
             }
