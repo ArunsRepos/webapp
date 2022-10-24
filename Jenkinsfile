@@ -23,8 +23,9 @@ pipeline {
             stage('Build') {
             steps {
                     
-                sh '''mkdir -p versions
-cp target/my-app.war versions/my-app-V$BUILD_ID-$BUILD_TIMESTAMP.war'''
+                sh '''rm -rf versions
+                mkdir -p versions
+cp target/my-app.war versions/my-app-V$BUILD_ID.war'''
             
             }
             }
