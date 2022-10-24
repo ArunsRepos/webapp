@@ -23,7 +23,15 @@ pipeline {
             stage('Build') {
             steps {
                     
-                sh '''cd /home/ec2-user/jenkins/jenkins/workspace/Build
+                sh '''  mvn clean build'''
+            
+            }
+            }
+
+            stage('Archive') {
+            steps {
+                    
+                sh '''  cd /home/ec2-user/jenkins/jenkins/workspace/Build
                         mkdir -p versions
                         cp target/my-app.war versions/my-app-V$BUILD_ID.war'''
             
