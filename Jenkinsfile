@@ -41,7 +41,7 @@ pipeline {
             stage('Notification') {
             steps {
               
-                slackSend channel: '#jenkins-cicd', color: 'green', message: 'Build finished- ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)'
+                slackSend channel: '#jenkins-cicd', color: 'green', message: "Build finished- ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
             }
             }
     }
